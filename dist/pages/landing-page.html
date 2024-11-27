@@ -9,27 +9,27 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css">
 </head>
 <body>
-    <div class="">
+    <div class="w-full">
     
         <!-- THIS IS SECTION IS FOR NAV BAR  -->
-        <nav class="flex border-b-2 h-[70px] border-b-2 content-center">
+        <nav class="sm:flex border-b-2 h-[70px] border-b-2 content-center w-full">
 
-            <div class="logo w-[33.5%] h-auto content-center">
+            <div class="logo sm:w-[33.5%] h-auto content-center w-full">
                 <!-- <a href="#" class="pl-8 bg-black"><img src="#" ></a> -->
             </div>
 
-            <div class="w-[33.5%] h-auto content-center space-x-6">
+            <div class="sm:w-[33.5%] w-full sm:content-center sm:block hidden h-auto  space-x-6">
                 <a href="#">Home</a>
                 <a href="#"> Services <i class="fa-solid fa-angle-down"></i></a>
                 
             </div>
 
-            <div class="w-[33.5%] h-auto content-center ">
+            <div class="sm:w-[33.5%] h-auto content-center w-full">
 
                 <div class="flex content-center">
-                    <div class="content-center"><i class="fa-regular fa-bell fa-lg"></i></div>
+                    <div class="content-center"><i class="fa-regular fa-bell fa-lg sm:block hidden"></i></div>
                 
-                    <div class="p-3 flex shadow-lg w-[60%] content-center rounded-full m-[auto] "> 
+                    <div class="p-3 flex shadow-lg w-[60%] h-auto content-center rounded-full m-[auto] "> 
                         <input type="text" placeholder="type service to search" class="w-[90%] focus:outline-none focus:border-sky-500"> 
                         <i class="fa-sharp fa-solid fa-magnifying-glass content-center"></i> 
                     </div>
@@ -41,43 +41,44 @@
         <!-- END FOR NAV SECTION -->
 
         <!-- THIS SECTION IS FOR THE MAIN HERO SECTION -->
-        <div class="flex item-center pl-8 w-[90%] shadow-xl m-[auto]">
+        <div class="sm:flex block item-center pl-8 w-[90%] shadow-xl m-[auto]">
             
-            <div class="w-[50%] content-center">
-                <strong class="text-6xl ">
+            <div class="sm:w-[50%] w-full content-center">
+                <strong class="sm:text-6xl text-5xl">
                     Simplifying <br>
                     Life, One <br>
                     Service at a <br>
                     Time.
                 </strong> <br> <br>
-                
+
                 <a href="#" class="bg-black p-2 rounded-md text-zinc-50 space-y-14 px-8 mt-14">Find a Service</a>
             </div>
                 
-            <div class="w-[50%]">
-                <img src="./../image/Rectangle 3.png" class="bg-black-400 w-[90%] p-7" >    
+            <div class="sm:w-[50%] w-full ">
+                <div ></div>
+                <img src="./../image/Rectangle 3.png" class="w-[95%] p-7" >    
             </div>
 
         </div>
         <!-- END FOR THE HERO SECTION -->
 
         <!-- THIS SECTION IS FOR THE FOUR CARD  -->
-        <div class="flex item-center m-[auto] space-">
+        <div class="sm:flex items-center m-[auto] w-[90%] m-[auto] gap-4 content-center mt-12">
 
-            <div class="bg-red-800 w-[23%]">
+            <div class="sm:w-[25%] w-[50%] float-right">
                 <img src="./../image/firstImg.svg" class="w-full">
             </div>
 
-            <div class="bg-red-900 w-[23%]">
-                <img src="./../image/secondImg.svg" class="w-full">
-            </div>
-
-            <div class="bg-red-900 w-[23%]">
+            <div class="sm:w-[25%] w-[50%]">
                 <strong>Connecting You with Trusted Professionals</strong>
                 <p>Easily find skilled laborers and reliable service providers to get your tasks done, anytime, anywhere.</p>
             </div>
 
-            <div class="bg-red-900 w-[23%]">
+            <div class=" sm:w-[25%] w-[50%] float-right">
+                <img src="./../image/secondImg.svg" class="w-full">
+            </div>
+
+            <div class="sm:w-[25%] w-[50%]">
                 <strong>Bridging the Gap Between You and Quality Services</strong>
                 <p> Whether it's repairs, maintenance, or specialized tasks, connect with skilled professionals ready to help.</p>
             </div>
