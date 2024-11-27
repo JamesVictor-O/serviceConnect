@@ -6,27 +6,34 @@
     <title>Service Connect</title>
     <!-- <link href="./../output.css" rel="stylesheet"> -->
     <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css">
 </head>
 <body>
     <div class="">
     
         <!-- THIS IS SECTION IS FOR NAV BAR  -->
-        <nav class="flex border-b-2 h-[60px] shadow-lg content-center">
+        <nav class="flex border-b-2 h-[70px] border-b-2 content-center">
 
             <div class="logo w-[33.5%] h-auto content-center">
-                <a href="#"><img src="#" ></a>
+                <!-- <a href="#" class="pl-8 bg-black"><img src="#" ></a> -->
             </div>
 
-            <div class="w-[33.5%] h-auto content-center">
+            <div class="w-[33.5%] h-auto content-center space-x-6">
                 <a href="#">Home</a>
-                <a href="#">Services</a>
+                <a href="#"> Services <i class="fa-solid fa-angle-down"></i></a>
+                
             </div>
 
             <div class="w-[33.5%] h-auto content-center ">
-                <div class="shadow-lg content-center">
-                <i></i>
-                <div> <input type="text" placeholder="type service to search"> <i></i> </div>
-                <img src="#" alt="">
+
+                <div class="flex content-center">
+                    <div class="content-center"><i class="fa-regular fa-bell fa-lg"></i></div>
+                
+                    <div class="p-3 flex shadow-lg w-[60%] content-center rounded-full m-[auto] "> 
+                        <input type="text" placeholder="type service to search" class="w-[90%] focus:outline-none focus:border-sky-500"> 
+                        <i class="fa-sharp fa-solid fa-magnifying-glass content-center"></i> 
+                    </div>
+                    <img src="#" alt="">
                 </div>
             
             </div>
@@ -34,28 +41,28 @@
         <!-- END FOR NAV SECTION -->
 
         <!-- THIS SECTION IS FOR THE MAIN HERO SECTION -->
-        <div class="flex item-center pl-8">
+        <div class="flex item-center pl-8 w-[90%] shadow-xl m-[auto]">
             
             <div class="w-[50%] content-center">
-                <strong class="text-5xl ">
+                <strong class="text-6xl ">
                     Simplifying <br>
                     Life, One <br>
                     Service at a <br>
                     Time.
                 </strong> <br> <br>
                 
-                <a href="#" class="bg-black p-2 text-zinc-50 space-y-14">Find a Service</a>
+                <a href="#" class="bg-black p-2 rounded-md text-zinc-50 space-y-14 px-8 mt-14">Find a Service</a>
             </div>
                 
             <div class="w-[50%]">
-                <img src="./../image/Rectangle 3.png" class="bg-black-400 w-[80%] p-7" >    
+                <img src="./../image/Rectangle 3.png" class="bg-black-400 w-[90%] p-7" >    
             </div>
 
         </div>
         <!-- END FOR THE HERO SECTION -->
 
         <!-- THIS SECTION IS FOR THE FOUR CARD  -->
-        <div class="flex item-center">
+        <div class="flex item-center m-[auto] space-">
 
             <div class="bg-red-800 w-[23%]">
                 <img src="./../image/firstImg.svg" class="w-full">
