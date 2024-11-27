@@ -1,0 +1,201 @@
+import React from 'react';
+import { Search, Star, Shield, Clock, MessageCircle, Camera } from 'lucide-react';
+
+const LandingPage = () => {
+  return (
+    <div className="min-h-screen bg-white">
+      {/* Navigation */}
+      <nav className="bg-white shadow-sm">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex justify-between h-16 items-center">
+            <div className="flex-shrink-0 flex items-center">
+              <h1 className="text-2xl font-bold text-blue-600">ServiceConnect</h1>
+            </div>
+            <div className="hidden md:block">
+              <div className="ml-10 flex items-center space-x-4">
+                <a className="text-gray-700 hover:text-blue-600 px-3 py-2">How it Works</a>
+                <a className="text-gray-700 hover:text-blue-600 px-3 py-2">Services</a>
+                <a className="text-gray-700 hover:text-blue-600 px-3 py-2">About</a>
+                <button className="bg-blue-600 text-white px-4 py-2 rounded-md">Sign Up</button>
+                <button className="text-blue-600 border border-blue-600 px-4 py-2 rounded-md">Login</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>
+
+      {/* Hero Section */}
+      <div className="bg-gradient-to-r from-blue-50 to-blue-100">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+          <div className="text-center">
+            <h2 className="text-4xl font-bold text-gray-900 mb-4">
+              Find Trusted Service Providers<br />Near You
+            </h2>
+            <p className="text-xl text-gray-600 mb-8">
+              Connect with verified professionals for all your home service needs
+            </p>
+            <div className="max-w-2xl mx-auto bg-white rounded-lg shadow-lg p-2 flex">
+              <div className="flex-1 flex">
+                <Search className="w-6 h-6 text-gray-400 mx-2" />
+                <input
+                  type="text"
+                  placeholder="What service do you need?"
+                  className="w-full outline-none"
+                />
+              </div>
+              <button className="bg-blue-600 text-white px-8 py-3 rounded-md">
+                Search
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Services Section */}
+      <div className="py-16">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h3 className="text-2xl font-semibold text-center mb-12">Popular Services</h3>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {[
+              { title: 'Plumbing', icon: Camera },
+              { title: 'Electrical', icon: Camera },
+              { title: 'Cleaning', icon: Camera },
+              { title: 'AC Repair', icon: Camera },
+              { title: 'Painting', icon: Camera },
+              { title: 'Carpentry', icon: Camera }
+            ].map((service, index) => (
+              <div key={index} className="bg-white rounded-lg shadow-md p-6 text-center hover:shadow-lg transition-shadow">
+                <service.icon className="w-12 h-12 mx-auto mb-4 text-blue-600" />
+                <h4 className="text-lg font-semibold">{service.title}</h4>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+
+      {/* Features Section */}
+      <div className="bg-gray-50 py-16">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h3 className="text-2xl font-semibold text-center mb-12">Why Choose Us</h3>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {[
+              {
+                icon: Shield,
+                title: 'Verified Professionals',
+                description: 'All service providers are thoroughly vetted and verified'
+              },
+              {
+                icon: Star,
+                title: 'Quality Service',
+                description: 'Rated and reviewed by customers like you'
+              },
+              {
+                icon: Clock,
+                title: 'Quick Response',
+                description: 'Get connected with providers within minutes'
+              }
+            ].map((feature, index) => (
+              <div key={index} className="text-center">
+                <feature.icon className="w-12 h-12 mx-auto mb-4 text-blue-600" />
+                <h4 className="text-lg font-semibold mb-2">{feature.title}</h4>
+                <p className="text-gray-600">{feature.description}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+
+      {/* How It Works */}
+      <div className="py-16">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h3 className="text-2xl font-semibold text-center mb-12">How It Works</h3>
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+            {[
+              { step: '1', text: 'Search for the service you need' },
+              { step: '2', text: 'Choose from verified professionals' },
+              { step: '3', text: 'Book and schedule your service' },
+              { step: '4', text: 'Pay securely through the platform' }
+            ].map((step, index) => (
+              <div key={index} className="text-center">
+                <div className="w-12 h-12 bg-blue-600 text-white rounded-full flex items-center justify-center mx-auto mb-4 text-xl font-bold">
+                  {step.step}
+                </div>
+                <p className="text-gray-600">{step.text}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+
+      {/* CTA Section */}
+      <div className="bg-blue-600 text-white py-16">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <h3 className="text-2xl font-semibold mb-4">Ready to get started?</h3>
+          <p className="mb-8">Join thousands of satisfied customers who trust our platform</p>
+          <button className="bg-white text-blue-600 px-8 py-3 rounded-md font-semibold">
+            Sign Up Now
+          </button>
+        </div>
+      </div>
+
+      {/* Footer */}
+      <footer className="bg-gray-800 text-white py-12">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+            <div>
+              <h4 className="text-lg font-semibold mb-4">ServiceConnect</h4>
+              <p className="text-gray-400">Find trusted professionals for all your service needs</p>
+            </div>
+            <div>
+              <h4 className="text-lg font-semibold mb-4">Services</h4>
+              <ul className="space-y-2 text-gray-400">
+                <li>Plumbing</li>
+                <li>Electrical</li>
+                <li>Cleaning</li>
+                <li>AC Repair</li>
+              </ul>
+            </div>
+            <div>
+              <h4 className="text-lg font-semibold mb-4">Company</h4>
+              <ul className="space-y-2 text-gray-400">
+                <li>About Us</li>
+                <li>Contact</li>
+                <li>Careers</li>
+                <li>Blog</li>
+              </ul>
+            </div>
+            <div>
+              <h4 className="text-lg font-semibold mb-4">Legal</h4>
+              <ul className="space-y-2 text-gray-400">
+                <li>Privacy Policy</li>
+                <li>Terms of Service</li>
+                <li>Cookie Policy</li>
+              </ul>
+            </div>
+          </div>
+          <div className="border-t border-gray-700 mt-8 pt-8 text-center text-gray-400">
+            <p>&copy; 2024 ServiceConnect. All rights reserved.</p>
+          </div>
+        </div>
+      </footer>
+    </div>
+  );
+};
+
+export default LandingPage;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- -->
