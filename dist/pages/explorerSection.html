@@ -4,9 +4,71 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Explorer Section</title>
-    <link href="./output.css" rel="stylesheet">
+    <!-- <link href="./output.css" rel="stylesheet"> -->
+    <script src="https://cdn.tailwindcss.com"></script> 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css">
 </head>
 <body>
-    <h1 class="bg-red-800">Hello World</h1>
+    <div>
+
+        <div class="">
+            <b class="text-center text-bold">Explore Services</b>
+        </div>
+
+        <!-- SEARCH & FILTER SECTION -->
+        <div class="w-full flex justify-end h-[40px] gap-2 pr-3">
+
+            <span class="p-3 w-[20%] border rounded-[7px] flex gap-1 "> 
+                <i class="fa-sharp fa-solid fa-magnifying-glass content-center"></i> 
+                <input type="text" placeholder="Search" class="w-[90%] focus:outline-none focus:border-sky-500"> 
+            </span>
+                        
+            <span class="p-3 border w-[8%] gap-1 h-auto rounded-[7px] flex content-center"> 
+                <i class="fa-solid fa-filter content-center"></i>
+                <input type="text" placeholder="Filter" class="w-[90%] focus:outline-none focus:border-sky-500"> 
+            </span>
+
+        </div>
+        <!-- END FOR SEARCH & FILTER SECTION -->
+
+        <!-- CARDS SECTION -->
+        <div>
+
+            <div class="bg-red-800">
+
+                <img src="./../userImage.png" alt="">
+
+                <div class="flex">
+                    <strong>Name: </strong> <span>John Doe</span>
+                </div>
+
+                <div class="flex">
+                    <strong>Service: </strong> <span>I am a trained electrician with over 14 years of experience</span>
+                </div>
+
+                <div class="flex">
+                    <strong>Description: </strong> <span>John Doe</span>
+                </div>
+
+                <div class="flex">
+                    <strong>Rating: </strong> <span>4.9</span>
+                </div>
+
+                <div class="flex">
+                    <strong> N5000/hr </strong> <a href="#">Book Now</span>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- END FOR CARDS SECTION -->
+
+        <!-- FOOTER SECTION -->
+         <div class="bg-black ">
+            <b class="text-center text-bold ">Copyright@2024</b>
+         </div>
+        <!-- END FOR FOOTER SECTION -->
+
+    </div>
 </body>
 </html>
