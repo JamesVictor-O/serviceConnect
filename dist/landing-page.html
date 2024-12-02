@@ -4,14 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Service Connect</title>
-    <link href="./../output.css" rel="stylesheet">
+    <link href="./output.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css">
 </head>
 <body>
-    <div class="w-full">
+    <div class="w-full mb-10">
     
         <!-- THIS SECTION IS FOR NAV BAR  -->
-        <nav class="sm:flex border-b-2 h-[70px] border-b-2 content-center w-full">
+        <nav class="sm:flex  h-[70px] border-b-2 content-center w-full">
 
             <div class="logo sm:w-[33.5%] h-auto content-center w-full">
                 <!-- <a href="#" class="pl-8 bg-black"><img src="#" ></a> -->
@@ -40,50 +40,57 @@
         <!-- END FOR NAV SECTION -->
 
         <!-- THIS SECTION IS FOR THE MAIN HERO SECTION -->
-        <div class="sm:flex block item-center pl-8 w-[90%] shadow-xl m-[auto]">
-            
-            <div class="sm:w-[50%] w-full content-center">
-                <strong class="sm:text-6xl text-5xl">
+        <div class="flex flex-col sm:flex-row items-center sm:items-start pl-8 w-[90%] min-h-72 shadow-xl m-auto mt-10 bg-white rounded-lg overflow-hidden">
+            <!-- Text Section -->
+            <div class="sm:w-1/2 w-full flex flex-col justify-center sm:pr-10 py-8">
+                <h1 class="text-4xl sm:text-6xl font-bold leading-tight mb-6">
                     Simplifying <br>
                     Life, One <br>
                     Service at a <br>
                     Time.
-                </strong> <br> <br>
-
-                <a href="#" class="bg-black p-2 rounded-md text-zinc-50 space-y-14 px-8 mt-14">Find a Service</a>
+                </h1>
+                <a href="./explorerSection.html" 
+                   class="bg-black text-white text-lg font-medium py-3 px-8 rounded-md transition-transform transform hover:scale-105 shadow-lg">
+                    Find a Service
+                </a>
             </div>
-                
-            <div class="sm:w-[50%] w-full ">
-                <div ></div>
-                <img src="./../image/Rectangle 3.png" class="w-[95%] p-7" >    
+            
+            <!-- Image Section -->
+            <div class="sm:w-1/2 w-full h- sm:h-auto bg-gray-100 flex justify-center items-center">
+                <img src="./../assets/Rectangle 3.png" 
+                     alt="Hero Image" 
+                     class="w-full h-full object-cover rounded-lg">
             </div>
-
         </div>
-        <!-- END FOR THE HERO SECTION -->
-
+        
         <!-- THIS SECTION IS FOR THE FOUR CARD  -->
-        <div class="sm:flex items-center m-[auto] w-[90%] m-[auto] gap-4 content-center mt-12">
+        <div class="sm:flex items-center  w-[90%] m-[auto] gap-4 content-center mt-12">
 
+           <div class="flex flex-col  md:flex-row items-start">
             <div class="sm:w-[25%] w-[49%] float-right">
-                <img src="./../image/firstImg.svg" class="w-full">
+                <img src="./../assets/image.png" class="w-full">
             </div>
 
-            <div class="sm:w-[25%] w-[49%]">
+            <div class="w-[50%] ml-4">
                 <strong>Connecting You with Trusted Professionals</strong>
                 <p>Easily find skilled laborers and reliable service providers to get your tasks done, anytime, anywhere.</p>
             </div>
+           </div>
+            
 
-            <div class=" sm:w-[25%] w-[49%] float-right">
-                <img src="./../image/secondImg.svg" class="w-full">
+           <div class="flex flex-col  md:flex-row items-start">
+            <div class="sm:w-[25%] w-[49%] float-right">
+                <img src="./../assets/image (1).png" class="w-full">
             </div>
 
-            <div class="sm:w-[25%] w-[49%]">
+            <div class="w-[50%] ml-4">
                 <strong>Bridging the Gap Between You and Quality Services</strong>
                 <p> Whether it's repairs, maintenance, or specialized tasks, connect with skilled professionals ready to help.</p>
             </div>
+           </div>
+          
 
         </div>
-        <!-- END FOR THE FOUR CARDS -->
         
     </div>
 
