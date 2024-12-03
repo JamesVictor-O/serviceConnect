@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./output.css" />
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Wix+Madefor+Text:ital,wght@0,400..800;1,400..800&display=swap");
+    </style>
+    <title>Document</title>
+  </head>
+  <body>
+    <main class="bg-gray-50 min-h-screen font-jost">
+      <div class="flex flex-col lg:flex-row gap-6 p-6 lg:px-10">
+        <!-- Sidebar -->
+        <div class="lg:w-1/4 h-full bg-white rounded-md shadow-md p-6">
+          <!-- Profile Section -->
+          <div class="flex flex-col items-center">
+            <div class="w-32 h-32 mb-4 overflow-hidden rounded-full">
+              <img src="/assets/Ellipse 1.png" alt="Profile" class="w-full h-full object-cover" />
+            </div>
+            <h2 class="font-semibold text-xl text-center mb-2">Jane Amarachi Amos</h2>
+            <div class="text-center mb-4">
+              <span class="font-medium">Rating: </span>
+              <span class="text-yellow-500 font-bold">4.9</span>
+            </div>
+            <button class="bg-black text-white py-2 px-4 rounded-md w-full hover:bg-gray-800 transition">
+              Go to Profile
+            </button>
+            <h3 class="mt-4 text-lg">
+              Jobs Completed: <span class="font-bold">1022</span>
+            </h3>
+          </div>
+        </div>
+    
+        <!-- Main Content -->
+        <div class="lg:w-3/4">
+          
+
+
+            <!-- booking section customer -->
+             <!-- <div class="bg-white rounded-md shadow-md p-6" >
+              <h2 class="text-xl font-semibold mb-4">Booked services</h2>
+              <table class=" w-full">
+                 <thead>
+                  <tr class="text-left">
+                    <th class="p-2">Services</th>
+                    <th class="p-2">Status</th>
+                    <th class="p-2">Date</th>
+                  </tr>
+                 </thead>
+                 <tbody>
+                  <tr>
+                    <td class="p-2">House wiring</td>
+                    <td class="p-2 text-green-400">Accepted</td>
+                    <td class="p-2">23/01/2024</td>
+                  </tr>
+                  <tr>
+                    <td class="p-2">House wiring</td>
+                    <td class="p-2 text-gray-400">Pending</td>
+                    <td class="p-2">23/01/2024</td>
+                  </tr>
+                  <tr>
+                    <td class="p-2">House wiring</td>
+                    <td class="p-2 text-red-600">Rejected</td>
+                    <td class="p-2">23/01/2024</td>
+                  </tr>
+                 </tbody>
+              </table>
+             </div> -->
+
+
+          
+            <!-- booking section provider -->
+            <div class="bg-white rounded-md shadow-md p-6" >
+              <h2 class="text-xl font-semibold mb-4">Booked services</h2>
+              <table class=" w-full">
+                 <thead>
+                  <tr class="text-left bg-black text-white">
+                    <th class="p-2">Customer</th>
+                    <th class="p-2">Job</th>
+                    <th class="p-2">Booked Date</th>
+                    <th class="p-2">Action</th>
+                  </tr>
+                 </thead>
+                 <tbody>
+                  <tr>
+                    <td class="p-2">James Victor</td>
+                    <td class="p-2 text-green-400">House wiring</td>
+                    <td class="p-2">23/01/2024</td>
+                    <td>
+                      <button class="border-2 border-green-300 py-1 px-3 rounded-md hover:bg-green-200 ">Accept</button>
+                      <button class="border-2 border-red-300 py-1 px-3 rounded-md hover:bg-red-300">Reject</button>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="p-2">James Victor</td>
+                    <td class="p-2">House wiring</td>
+                    <td class="p-2">23/01/2024</td>
+                    <td>
+                      <button class="border-2 border-green-300 py-1 px-3 rounded-md hover:bg-green-200 ">Accept</button>
+                      <button class="border-2 border-red-300 py-1 px-3 rounded-md hover:bg-red-300">Reject</button>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="p-2">James Victor</td>
+                    <td class="p-2 text-green-400">House wiring</td>
+                    <td class="p-2">23/01/2024</td>
+                    <td>
+                      <button class="border-2 border-green-300 py-1 px-3 rounded-md hover:bg-green-200 ">Accept</button>
+                      <button class="border-2 border-red-300 py-1 px-3 rounded-md hover:bg-red-300">Reject</button>
+                    </td>
+                  </tr>
+                 </tbody>
+              </table>
+             </div>
+
+
+
+
+
+
+
+          <!-- <div class="bg-white rounded-md shadow-md p-6">
+            <h2 class="text-xl font-semibold mb-4">Reviews</h2>
+            
+            <div class="border-b pb-4 mb-4">
+              <div class="flex items-center gap-4">
+                <img src="/assets/Ellipse 1.png" alt="Reviewer" class="w-16 h-16 rounded-full object-cover" />
+                <div>
+                  <span class="font-semibold">Jane Amarachi Amos</span>
+                  <div class="flex mt-1 text-yellow-500">
+                    <img src="/assets/star.png" alt="Star" class="w-4 h-4" />
+                    <img src="/assets/star.png" alt="Star" class="w-4 h-4" />
+                    <img src="/assets/star.png" alt="Star" class="w-4 h-4" />
+                    <img src="/assets/star.png" alt="Star" class="w-4 h-4" />
+                    <img src="/assets/star.png" alt="Star" class="w-4 h-4" />
+                  </div>
+                </div>
+              </div>
+              <p class="mt-3 text-gray-700">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam dolore voluptatum
+                assumenda.
+              </p>
+            </div> 
+    
+          
+            <div class="border-b pb-4 mb-4">
+              <div class="flex items-center gap-4">
+                <img src="/assets/Ellipse 1.png" alt="Reviewer" class="w-16 h-16 rounded-full object-cover" />
+                <div>
+                  <span class="font-semibold">Jane Amarachi Amos</span>
+                  <div class="flex mt-1 text-yellow-500">
+                    <img src="/assets/star.png" alt="Star" class="w-4 h-4" />
+                    <img src="/assets/star.png" alt="Star" class="w-4 h-4" />
+                    <img src="/assets/star.png" alt="Star" class="w-4 h-4" />
+                    <img src="/assets/star.png" alt="Star" class="w-4 h-4" />
+                    <img src="/assets/star.png" alt="Star" class="w-4 h-4" />
+                  </div>
+                </div>
+              </div>
+              <p class="mt-3 text-gray-700">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam dolore voluptatum
+                assumenda.
+              </p>
+            </div>
+          </div> -->
+    
+          
+          <div class="bg-white rounded-md shadow-md mt-6 p-6">
+            <h2 class="text-xl font-semibold mb-4">About</h2>
+            <p class="text-gray-700 leading-relaxed">
+              Lorem ipsum dolor sit amet consectetur. Commodo tempus maecenas bibendum accumsan sodales nulla.
+              Ut bibendum sit cum quisque ipsum pretium id vestibulum. Urna sagittis scelerisque pellentesque
+              pharetra diam amet quam. Pellentesque suspendisse tortor quis aenean aenean.
+            </p>
+          </div>
+        </div>
+      </div>
+    </main>
+    
+  </body>
+</html>
