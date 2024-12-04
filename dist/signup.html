@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/dist/output.css" />
+    <script src="../src/app.js" defer></script>
+    <title>signup page</title>
+  </head>
+  <body>
+    <nav class="sm:flex h-[70px] border-b-2 content-center w-full">
+      <div class="logo sm:w-[33.5%] h-auto content-center w-full">
+        <!-- <a href="#" class="pl-8 bg-black"><img src="#" ></a> -->
+      </div>
+
+      <div
+        class="sm:w-[33.5%] w-full sm:content-center sm:block hidden h-auto space-x-6"
+      >
+        <a href="#">Home</a>
+        <a href="#"> Services <i class="fa-solid fa-angle-down"></i></a>
+      </div>
+
+      <div class="sm:w-[33.5%] h-auto content-center w-full">
+        <div class="flex content-center">
+          <div class="content-center">
+            <i class="fa-regular fa-bell fa-lg sm:block hidden"></i>
+          </div>
+
+          <div
+            class="p-3 flex shadow-lg w-[60%] h-auto content-center rounded-full m-[auto]"
+          >
+            <input
+              type="text"
+              placeholder="Type service to search"
+              class="w-[90%] focus:outline-none focus:border-sky-500"
+            />
+            <i
+              class="fa-sharp fa-solid fa-magnifying-glass content-center"
+            ></i>
+          </div>
+          <img src="#" alt="" />
+        </div>
+      </div>
+    </nav>
+    <div class="sm:block md:block lg:flex justify-center p-2 md:p-10">
+      <div class="w-[45%] hidden md:block">
+        <img
+          src="./assets/signupImage.png"
+          alt=""
+          class="sm:object-cover md:w-full lg:w-[40vw] h-[100vh]"
+        />
+      </div>
+
+      <div class="lg:w-[45%] h-[100vh] ">
+        <form
+          id="userForm"
+          class="p-[50px] sm:text-center md:text-center lg:text-left"
+        >
+          <div>
+            <h2
+              class="sm:w-full md:text-center lg:text-left font-bold w-full text-[20px]"
+            >
+              Create New Freelancer Account
+            </h2>
+            <p class="md:text-[10px] lg:text-[12px] mb-[20px]">
+              please enter details
+            </p>
+          </div>
+
+          <label for="First Name">First Name:</label><br />
+          <input
+            type="text"
+            name="name"
+            id="firstName"
+            class="p-[7px] border-[1px] border-black rounded-[10px] w-full"
+          /><br /><br />
+
+          <label for="Last Name">Last Name:</label><br />
+          <input
+            type="text"
+            name="name"
+            id="lastName"
+            class="p-[7px] border-[1px] border-black w-full rounded-[10px]"
+          /><br /><br />
+
+          <label for="Last Name">Skill/service:</label><br />
+          <input
+            type="text"
+            name="name"
+            id="lastName"
+            class="p-[7px] border-[1px] border-black w-full rounded-[10px]"
+          /><br /><br />
+
+          <label for="emal">Email:</label><br />
+          <input
+            type="email"
+            name="email"
+            id="email"
+            class="p-[7px] border-[1px] border-black w-full rounded-[10px]"
+          /><br /><br />
+
+          <label for="password">Password:</label><br />
+          <input
+            type="password"
+            name="password"
+            id="password"
+            class="p-[7px] border-[1px] border-black w-full rounded-[10px]"
+          /><br /><br />
+
+          <div class="mb-[20px]">
+            <input type="checkbox" class="form-checkbox h-2 w-2" />
+            <span class="ml-2">i agree to the terms & conditions</span>
+          </div>
+
+          <input
+            type="button"
+            id="submit"
+            value="sign up"
+            class="p-[9px] border-[1px] border-black w-full rounded-[10px] bg-red-950 text-white"
+          />
+        </form>
+      </div>
+    </div>
+  </body>
+</html>
