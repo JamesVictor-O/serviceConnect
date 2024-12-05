@@ -1,0 +1,11 @@
+{
+  "name": "serviceconnect",
+  "version": "1.0.0",
+  "description": "Welcome to the **Local Service Provider Directory**, a platform designed to connect users with trusted local service providers based on their location and specific needs. This project aims to simplify the process of finding, booking, and reviewing professional services while empowering service providers to expand their reach and grow their business.",
+  "main": "tailwind.config.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}
