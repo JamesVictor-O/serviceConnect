@@ -56,21 +56,21 @@
             <form id="userForm" class="p-[50px] sm:text-center md:text-center lg:text-left">
                 <div>
                     <h2 class="sm:w-full md:text-center lg:text-left font-bold w-full text-[20px]">Welcome</h2>
-                    <p class="md:text-[10px] lg:text-[12px] mb-[20px]">please enter details</p>
+                    <p class="md:text-[10px] lg:text-[12px] mb-[20px]">Please enter details</p>
                 </div>
                 
                 <label for="emal">Email Address:</label><br>
                 <input type="email" name="email" id="email" class="p-[7px] border-[1px]
-                border-black w-full rounded-[10px] md:w-[300px]"><br><br>
+                border-black w-full rounded-[10px] md:w-[300px]" pattern=".+@.+\..+" required><br><br>
 
                 <label for="password">Password:</label><br>
                 <input type="password" name="password" id="password" class="p-[7px] border-[1px]
-                border-black w-full rounded-[10px] md:w-[300px]"><br><br>
+                border-black w-full rounded-[10px] md:w-[300px]" minlength="8" required><br><br>
 
 
                 <div class="mb-[20px]">
-                    <input type="checkbox" class="form-checkbox h-2 w-2 " />
-                    <span class="ml-2 ">i agree to the terms & conditions</span>
+                    <input type="checkbox" class="form-checkbox h-2 w-2 " required />
+                    <span class="ml-2 ">I agree to the terms & conditions</span>
                 </div>
                   
                 <input type="button" id="submit" value="Login" class="p-[9px] border-[1px]
