@@ -1,7 +1,9 @@
 // Import the functions you need from the SDKs you need
+import { form_validation } from "./signup";
 import { initializeApp } from "firebase/app";
 import { createUserWithEmailAndPassword,getAuth, signInWithEmailAndPassword } from "firebase/auth";
 import { getFirestore,setDoc,doc, query, collection, getDoc, getDocs, updateDoc } from "firebase/firestore";
+
 
 
 const firebaseConfig = {
@@ -41,22 +43,13 @@ const handle_clientSignUp= async ()=>{
 
 
 // sign up function for client
-const handle_serviceSignUp= async ()=>{
-    const providerData={
-        providerId,
-        occupation,
-        firstname,
-        lastname,
-        description,
-        yearsOfExpirence,
-        serviceFee,
-
-    }
+export const handle_serviceSignUp= async (userData)=>{  
     try{
-        const userCredential=createUserWithEmailAndPassword(auth,email,password)
+        const userCredential=createUserWithEmailAndPassword(auth,userData.email,userData.password)
         const user=(await userCredential).user
 
         await setDoc(doc(db,"clients",user.uid),userData)
+        alert("okay")
     }catch(err){
         console.log(err)
     }
