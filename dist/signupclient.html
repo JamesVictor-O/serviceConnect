@@ -1,0 +1,73 @@
+<!DOCTYPE html>  
+<html lang="en">  
+<head>  
+    <meta charset="UTF-8">  
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">  
+    <title>Service Provider Registration</title>  
+    <link rel="stylesheet" href="/dist/output.css" />
+</head> 
+<body class="bg-gray-100 flex md:items-center md:justify-center min-h-screen">  
+    <div class="bg-white rounded-lg shadow-lg p-8 w-full max-w-md md:my-10">  
+        <h2 class="text-4xl font-bold text-center mb-6 text-blue-600">Registration Form</h2>  
+        <form>  
+            <div class="mb-2">
+                <label for="email" class="block mb-2 text-sm font-medium text-gray-900 dark:text-black">Your email</label>
+                <input type="email" id="providerEmail" class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5  dark:border-gray-600 dark:placeholder-gray-400 dark:text-black dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light" placeholder="provide email address" required />
+                <p id="emailError" class="text-red-500"></p>
+            </div>
+            
+               
+            <div class="grid md:grid-cols-2 gap-2">
+                <div class="mb-4">  
+                    <label class="block text-gray-700 text-sm font-semibold mb-2" for="service">* Service Provided</label>  
+                    <input type="text" id="providerService" placeholder="Enter service you provide" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" required>  
+                </div>  
+                <div class="mb-4">  
+                    <label class="block text-gray-700 text-sm font-semibold mb-2" for="location">* Location</label>  
+                    <input type="text" id="providerLocation" placeholder="Enter your location" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" required>  
+                </div>  
+                <div class="mb-4">  
+                    <label class="block text-gray-700 text-sm font-semibold mb-2" for="phone">* Phone Number</label>  
+                    <input type="tel" id="providerPhone" placeholder="Enter your phone number" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" required>  
+                </div>  
+                <div class="mb-4">  
+                    <label class="block text-gray-700 text-sm font-semibold mb-2" for="price">* Price Range per Hour</label>  
+                    <input type="text" id="providerPrice" placeholder="Enter price range" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" required>  
+                </div>  
+            </div>
+            
+            <div class="mb-2">
+                <label for="password" class="block mb-2 text-sm font-medium text-gray-900 dark:text-black">Your password</label>
+                <input type="password" id="providerPassword" class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5  dark:border-gray-600 dark:placeholder-gray-400 dark:text-black dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light" placeholder="provide password" required />
+                <p id="passwordError" class="text-red-500"></p>
+              </div>
+    
+              <div class="mb-2">
+                <label for="repeat-password" class="block mb-2 text-sm font-medium text-gray-900 dark:text-black">Repeat password</label>
+                <input type="password" id="confirmPassword" class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5  dark:border-gray-600 dark:placeholder-gray-400 dark:text-black dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light" placeholder="confirm password" required />
+                <p id="confirmPassword" class="text-red-500"></p>
+    
+              </div>
+            <div class="mb-2">
+                <label for="description" class="block text-gray-700 text-sm font-semibold mb-2">Description:</label>
+                <textarea id="description" class="p-[7px] border-[1px] border-black w-full rounded-[10px] h-[100px]" placeholder="Enter a brief description"></textarea>
+                <p id="descriptionError" class="text-red-500"></p>
+            </div> 
+            <div class="flex items-start mb-5">
+                <div class="flex items-center h-5">
+                  <input id="termsCheckbox" type="checkbox"  value="" class="w-4 h-4 border border-gray-300 rounded bg-gray-50 focus:ring-3 focus:ring-blue-300 dark:bg-gray-700 dark:border-gray-600 dark:focus:ring-blue-600 dark:ring-offset-gray-800 dark:focus:ring-offset-gray-800" required />
+                </div>
+                <label for="terms" class="ms-2 text-sm font-medium text-gray-900 dark:text-gray-300">I agree with the <a href="#" class="text-blue-600 hover:underline dark:text-blue-500">terms and conditions</a></label>
+              </div>
+            
+            <button type="submit" id="createAccountBtn" class="w-full bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">
+                Create Account
+            </button>  
+        </form>
+        
+        <p class="mt-4 text-center text-gray-600">Already have an account? <a href="#" class="font-bold text-blue-500">Sign in</a></p>  
+    </div>  
+    <script src="./bundle.js" defer></script>
+</body>   
+  
+</html>

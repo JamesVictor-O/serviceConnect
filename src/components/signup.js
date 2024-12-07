@@ -6,14 +6,8 @@ import {
 } from "firebase/auth";
 
 import {
-  getFirestore,
   setDoc,
   doc,
-  query,
-  collection,
-  getDoc,
-  getDocs,
-  updateDoc,
 } from "firebase/firestore";
 import { auth } from "../firebaseConfig";
 import { validateEmail } from "../index";
@@ -22,7 +16,7 @@ import { validateEmail } from "../index";
 // sign up
 const firstName = document.getElementById("firstName");
 const lastName = document.getElementById("lastName");
-const skill = document.getElementById("skills");
+const address = document.getElementById("homeAddress");
 const email = document.getElementById("email");
 const password = document.getElementById("password");
 const confirmPassword = document.getElementById("repeat-password");
@@ -118,18 +112,23 @@ const form_validation=(e)=> {
   return isValid;
 }
 
-submitButton.addEventListener("click", (e) => {
-  e.preventDefault();
-  const isValid = form_validation(e);
-  if (isValid) {
-    const userData = {
-      firstName: firstName.value,
-      lastName: lastName.value,
-      skill: skill.value,
-      email: email.value,
-      password: password.value,
-      description: description.value,
-    };
-    handle_serviceSignUp(userData);
-  }
-})
+if(submitButton){
+  submitButton.addEventListener("click", (e) => {
+    e.preventDefault();
+    const isValid = form_validation(e);
+    if (isValid) {
+      const userData = {
+        status:Client,
+        firstName: firstName.value,
+        lastName: lastName.value,
+        skill: skill.value,
+        email: email.value,
+        password: password.value,
+        description: description.value,
+        homeAddress:address.value,
+      };
+      handle_serviceSignUp(userData);
+    }
+  })
+  
+}
