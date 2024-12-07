@@ -1,24 +1,4 @@
 // Import the functions you need from the SDKs you need
-import { form_validation } from "./signup";
-import { initializeApp } from "firebase/app";
-import { createUserWithEmailAndPassword,getAuth, signInWithEmailAndPassword } from "firebase/auth";
-import { getFirestore,setDoc,doc, query, collection, getDoc, getDocs, updateDoc } from "firebase/firestore";
-
-
-
-const firebaseConfig = {
-    apiKey: "AIzaSyCrX3T9V_3LYw_smMZIVQlBOP-09IxGrf0",
-    authDomain: "serviceconnect-bd8ea.firebaseapp.com",
-    projectId: "serviceconnect-bd8ea",
-    storageBucket: "serviceconnect-bd8ea.firebasestorage.app",
-    messagingSenderId: "1052699541018",
-    appId: "1:1052699541018:web:956a85c6f742fc9e1cdba3"
-  };
-
-  // Initialize Firebase
-const app = initializeApp(firebaseConfig);
-const auth=getAuth(app)
-const db=getFirestore(app)
 
 
 // sign up function for client
@@ -54,7 +34,6 @@ export const handle_serviceSignUp= async (userData)=>{
         console.log(err)
     }
 }
-
 
 //setting up booking section 
 const handle_booking= async ()=>{
