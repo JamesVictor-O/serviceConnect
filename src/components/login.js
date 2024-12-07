@@ -5,7 +5,7 @@ import { signInWithEmailAndPassword } from "firebase/auth";
 const userEmail = document.getElementById("LoginEmail");
 const userPassword = document.getElementById("password");
 const loginButton = document.getElementById("loginBtn");
-
+import { get_serviceProviders } from "./explore";
 // Email validation function
 function validateEmail(email) {
   const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -41,8 +41,8 @@ const handle_login = async (userInfo) => {
   try {
     const userCredential = await signInWithEmailAndPassword(auth, userInfo.email, userInfo.password);
     const user = userCredential.user; 
-    console.log("Login successful:", user);
     window.location.href = "/dist/explorerSection.html";
+    // get_serviceProviders()
   } catch (err) {
     console.error("Login failed:", err.message);
     const errMsg = document.getElementById("emailError");
