@@ -1,4 +1,25 @@
-const form = document.getElementById("userForm");
+
+import {
+  createUserWithEmailAndPassword,
+  getAuth,
+  signInWithEmailAndPassword,
+} from "firebase/auth";
+
+import {
+  getFirestore,
+  setDoc,
+  doc,
+  query,
+  collection,
+  getDoc,
+  getDocs,
+  updateDoc,
+} from "firebase/firestore";
+import { auth } from "../firebaseConfig";
+import { validateEmail } from "../index";
+
+
+// sign up
 const firstName = document.getElementById("firstName");
 const lastName = document.getElementById("lastName");
 const skill = document.getElementById("skills");
@@ -7,9 +28,25 @@ const password = document.getElementById("password");
 const confirmPassword = document.getElementById("repeat-password");
 const termsCheckbox = document.getElementById("terms");
 const description = document.getElementById("description");
-import { handle_serviceSignUp } from "./script";
+const submitButton=document.getElementById("submitBtn")
 
-export function form_validation() {
+const handle_serviceSignUp = async (userData) => {
+  try {
+    const userCredential = await createUserWithEmailAndPassword(
+      auth,
+      userData.email,
+      userData.password
+    );
+    const user = (await userCredential).user;
+
+    await setDoc(doc(db, "clients", user.uid), userData);
+    window.location.href = "/dist/login.html";
+  } catch (err) {
+    alert(err.message);
+  }
+};
+const form_validation=(e)=> {
+    e.preventDefault()
   let isValid = true;
 
   const firstErrMsg = document.getElementById("firstnameError");
@@ -78,17 +115,12 @@ export function form_validation() {
     isValid = false;
   }
 
-  function validateEmail(email) {
-    const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    return regex.test(email);
-  }
-
   return isValid;
 }
 
 submitButton.addEventListener("click", (e) => {
   e.preventDefault();
-  const isValid = form_validation();
+  const isValid = form_validation(e);
   if (isValid) {
     const userData = {
       firstName: firstName.value,
@@ -100,4 +132,4 @@ submitButton.addEventListener("click", (e) => {
     };
     handle_serviceSignUp(userData);
   }
-});
+})

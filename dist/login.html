@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/dist/output.css">
-    <script src="../src/app.js" defer></script>
     <title>signup page </title>
 </head>
 <body>
@@ -105,7 +104,7 @@
     </div>
   </nav>
 
-    <div class="sm:block md:block lg:flex justify-center p-2 md:p-10">
+    <div class="sm:block md:block lg:flex flex-row justify-center p-2 md:p-10">
 
         <div class="w-[45%] hidden md:block">
             <img
@@ -115,31 +114,31 @@
             />
           </div>
 
-        <div class="lg:w-[45%] h-[100vh] ">
-            <form id="userForm" class="p-[50px] sm:text-center md:text-center lg:text-left">
-                <div>
-                    <h2 class="sm:w-full md:text-center lg:text-left font-bold w-full text-[20px]">Welcome</h2>
-                    <p class="md:text-[10px] lg:text-[12px] mb-[20px]">Please enter details</p>
-                </div>
-                
-                <label for="emal">Email Address:</label><br>
-                <input type="email" name="email" id="email" class="p-[7px] border-[1px]
-                border-black w-full rounded-[10px] md:w-[300px]" pattern=".+@.+\..+" required><br><br>
+        <div class="lg:w-[45%] h-[100vh] flex flex-col align-middle items-center ">
+          <h2 class="underline text-3xl my-3 text-blue-400">Login</h2>
+          <form class="max-w-sm mx-auto">
+           
+            
+            <div class="mb-2">
+              <label for="email" class="block mb-2 text-sm font-medium text-gray-900 dark:text-black">Your email</label>
+              <input type="email" id="LoginEmail" class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5  dark:border-gray-600 dark:placeholder-gray-400 dark:text-black dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light" placeholder="name@flowbite.com" required />
+              <p id="emailError" class="text-red-500"></p>
+            </div>
+  
+            
+           
+            <div class="mb-2">
+              <label for="password" class="block mb-2 text-sm font-medium text-gray-900 dark:text-black">Your password</label>
+              <input type="password" id="password" class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5  dark:border-gray-600 dark:placeholder-gray-400 dark:text-black dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light" placeholder="name@flowbite.com" required />
+              <p id="passwordError" class="text-red-500"></p>
+            </div>
+  
+           
 
-                <label for="password">Password:</label><br>
-                <input type="password" name="password" id="password" class="p-[7px] border-[1px]
-                border-black w-full rounded-[10px] md:w-[300px]" minlength="8" required><br><br>
+            <button type="submit" id="loginBtn" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Login</button>
+          </form>
 
 
-                <div class="mb-[20px]">
-                    <input type="checkbox" class="form-checkbox h-2 w-2 " required />
-                    <span class="ml-2 ">I agree to the terms & conditions</span>
-                </div>
-                  
-                <input type="button" id="submit" value="Login" class="p-[9px] border-[1px]
-                border-black w-full rounded-[10px] bg-red-950 md:w-[300px] text-white">
-                <a href="./explorerSection.html"> next</a>
-            </form>
         </div>
     </div>
 
@@ -326,5 +325,6 @@
         </div>
       </div>
     </footer>
+    <script src="./bundle.js" defer ></script>
 </body>
 </html>
