@@ -1,5 +1,9 @@
 import { db } from "../firebaseConfig";
 import { collection, getDocs, query } from "firebase/firestore";
+
+
+const bookFormContainer=document.getElementById('bookForm')
+
 const params = new URLSearchParams(window.location.search);
 const userId = params.get("userId");
 
@@ -32,7 +36,9 @@ document.addEventListener("DOMContentLoaded", () => {
               <span class="font-medium">Rating: </span>
               <span class="text-yellow-500 font-bold">4.9</span>
             </div>
-            <button class="bg-black text-white py-2 px-4 rounded-md w-full hover:bg-gray-800 transition">
+            <button
+            id="bookFormBtn"
+             class="bg-black text-white py-2 px-4 rounded-md w-full hover:bg-gray-800 transition">
               book
             </button>
             <h3 class="mt-4 text-lg">
@@ -91,17 +97,27 @@ document.addEventListener("DOMContentLoaded", () => {
           <div class="bg-white rounded-md shadow-md mt-6 p-6">
             <h2 class="text-xl font-semibold mb-4">About</h2>
             <p class="text-gray-700 leading-relaxed">
-              Lorem ipsum dolor sit amet consectetur. Commodo tempus maecenas bibendum accumsan sodales nulla.
-              Ut bibendum sit cum quisque ipsum pretium id vestibulum. Urna sagittis scelerisque pellentesque
-              pharetra diam amet quam. Pellentesque suspendisse tortor quis aenean aenean.
+             ${service.description}
             </p>
           </div>
         </div>
       </div>
+
+
+
+
+      
             `;
       });
     }
+    const bookformBtn=document.getElementById("bookFormBtn")
+
+    bookformBtn.addEventListener("click",()=>{
+      bookFormContainer.classList.remove('hidden');
+  })
+
   };
 
   getServiceProvider()
+ 
 });

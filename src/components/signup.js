@@ -1,10 +1,8 @@
 
 import {
   createUserWithEmailAndPassword,
-  getAuth,
-  signInWithEmailAndPassword,
 } from "firebase/auth";
-
+import { db } from "../firebaseConfig";
 import {
   setDoc,
   doc,
@@ -21,17 +19,16 @@ const email = document.getElementById("email");
 const password = document.getElementById("password");
 const confirmPassword = document.getElementById("repeat-password");
 const termsCheckbox = document.getElementById("terms");
-const description = document.getElementById("description");
 const submitButton=document.getElementById("submitBtn")
 
-const handle_serviceSignUp = async (userData) => {
+const handle_serviceSignUp = async (userData,password) => {
   try {
     const userCredential = await createUserWithEmailAndPassword(
       auth,
       userData.email,
-      userData.password
+      password
     );
-    const user = (await userCredential).user;
+    const user = userCredential.user;
 
     await setDoc(doc(db, "clients", user.uid), userData);
     window.location.href = "/dist/login.html";
@@ -61,14 +58,7 @@ const form_validation=(e)=> {
     isValid = true;
   }
 
-  const skillErrMsg = document.getElementById("SkillError");
-  if (!skill.value.trim() || skill.value.trim().length < 4) {
-    skillErrMsg.innerHTML = "invalid name";
-    isValid = false;
-  } else {
-    skillErrMsg.innerHTML = "";
-    isValid = true;
-  }
+
 
   const emailErrMsg = document.getElementById("emailError");
   if (!email.value.trim() || !validateEmail(email.value.trim())) {
@@ -79,8 +69,8 @@ const form_validation=(e)=> {
     isValid = true;
   }
 
-  const error = document.getElementById("descriptionError");
-  if (!description.value.trim() || description.value.trim().length < 10) {
+  const error = document.getElementById("homeError");
+  if (!address.value.trim() || address.value.trim().length < 10) {
     error.innerHTML = "Description must be at least 10 characters long.";
   } else {
     error.innerHTML = "";
@@ -118,17 +108,17 @@ if(submitButton){
     const isValid = form_validation(e);
     if (isValid) {
       const userData = {
-        status:Client,
+        status:"client",
         firstName: firstName.value,
         lastName: lastName.value,
-        skill: skill.value,
         email: email.value,
-        password: password.value,
-        description: description.value,
+        address: address.value,
         homeAddress:address.value,
+
       };
-      handle_serviceSignUp(userData);
+      handle_serviceSignUp(userData,password.value);
     }
   })
+  
   
 }

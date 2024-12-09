@@ -1,18 +1,19 @@
-import { auth } from "../firebaseConfig";
-import { signInWithEmailAndPassword } from "firebase/auth";
+import { auth,db } from "../firebaseConfig";
+import { signInWithEmailAndPassword} from "firebase/auth";
+import { getDoc,doc } from "firebase/firestore";
 
-// Select DOM elements
+
 const userEmail = document.getElementById("LoginEmail");
 const userPassword = document.getElementById("password");
 const loginButton = document.getElementById("loginBtn");
 import { get_serviceProviders } from "./explore";
-// Email validation function
+
 function validateEmail(email) {
   const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
   return regex.test(email);
 }
 
-// Login validation
+
 function login_validation(e) {
   e.preventDefault();
   let isValid = true;
@@ -36,13 +37,41 @@ function login_validation(e) {
   return isValid;
 }
 
-// Handle login
 const handle_login = async (userInfo) => {
+
   try {
     const userCredential = await signInWithEmailAndPassword(auth, userInfo.email, userInfo.password);
     const user = userCredential.user; 
-    window.location.href = "/dist/explorerSection.html";
-    // get_serviceProviders()
+    
+    let userId=user.uid;
+    let clientDocRef= await getDoc(doc(db, "clients",userId))
+    console.log("Client Doc:", clientDocRef.data());
+    if(clientDocRef.exists()){
+      let userInfo={
+          userRole:"client",
+          userId,
+      }
+      alert("he is a client")
+      localStorage.setItem("userInfo",JSON.stringify(userInfo))
+      window.location.href = "/dist/explorerSection.html";
+    }else{
+        const providerDocRef =await getDoc(doc(db, "provider", userId));
+        
+        if(providerDocRef.exists()){
+          let userInfo={
+            userRole:"provider",
+            userId
+          }
+          alert("he is a service provider")
+          localStorage.setItem("userInfo",JSON.stringify(userInfo))
+          window.location.href = "/dist/providerDashboard.html";
+        }
+            
+    }
+
+
+   
+
   } catch (err) {
     console.error("Login failed:", err.message);
     const errMsg = document.getElementById("emailError");
@@ -50,7 +79,7 @@ const handle_login = async (userInfo) => {
   }
 };
 
-// Attach event listener to the login button
+
 if (loginButton) {
   loginButton.addEventListener("click", (e) => {
     e.preventDefault();

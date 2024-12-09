@@ -4,7 +4,6 @@ import {
   } from "firebase/auth";
   
   import {
-    getFirestore,
     setDoc,
     doc,
   } from "firebase/firestore";
@@ -24,12 +23,12 @@ import { db } from "../firebaseConfig";
   const createAccountBtn = document.getElementById("createAccountBtn");
   
  
-  const handleProviderSignUp = async (providerData) => {
+  const handleProviderSignUp = async (providerData,password) => {
     try {
       const userCredential = await createUserWithEmailAndPassword(
         auth,
         providerData.providerEmail,
-        providerData.providerPassword
+        password
       );
       const user = userCredential.user;
       await setDoc(doc(db, "provider", user.uid), providerData);
@@ -67,7 +66,7 @@ import { db } from "../firebaseConfig";
       addError(providerService, "Service is required.");
     }
   
-    if (!providerLocation.value.trim()) {
+    if (!providerLocation.value.trim() === "filter") {
       addError(providerLocation, "Location is required.");
     }
   
@@ -107,16 +106,16 @@ import { db } from "../firebaseConfig";
       if (validateProviderForm()) {
        
         const providerData = {
-          status:get_serviceProviders,
+          status:"serviceProvider",
           providerEmail: providerEmail.value,
           providerService: providerService.value,
           providerLocation: providerLocation.value,
           providerPhone: providerPhone.value,
           providerPrice: providerPrice.value,
           description: description.value,
-          providerPassword: providerPassword.value,
         };
-        handleProviderSignUp(providerData);
+       
+        handleProviderSignUp(providerData,providerPassword.value);
       }
     });
   }
