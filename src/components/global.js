@@ -1,11 +1,12 @@
 import { query,getDocs,collection} from "firebase/firestore";
 import { db } from "../firebaseConfig";
 
+
 export const applyGlobalFeatures = () => {
     let loginBtn=document.getElementById("loginDBtn")
     let profileIcon=document.getElementById("profieIcon")
+    let serviceM=document.getElementById("serviceM")
     const userInfo = JSON.parse(localStorage.getItem("userInfo"));
-    console.log(userInfo)
 
     if(userInfo){
         loginBtn.classList.add("hidden")
@@ -17,6 +18,7 @@ export const applyGlobalFeatures = () => {
 
     if (userInfo && userInfo.userRole === "provider") {
         dashboardLink.href = "/dist/providerDashboard.html";
+        serviceM.classList.add("hidden")
       } else if (userInfo && userInfo.userRole === "client") {
         dashboardLink.href = "/dist/clienthistoryBoard.html";
       } else {
@@ -40,9 +42,10 @@ export const applyGlobalFeatures = () => {
       let signOut=document.getElementById("signoutBtn");
       signOut.addEventListener("click",()=>{
         localStorage.removeItem("userInfo")
+        location.reload()
+        window.location.href = "/dist/index.html"; 
       })
 
-      console.log(signOut)
 
     
   };
@@ -61,7 +64,6 @@ export const applyGlobalFeatures = () => {
             bookings.push({id:booking.id,...booking.data()})
         }
     })
-    console.log(bookings)
     clientHistoryContainer.innerHTML="";
     bookings.forEach(task=>{
         clientHistoryContainer.innerHTML +=`
@@ -73,4 +75,8 @@ export const applyGlobalFeatures = () => {
         `
     })
   }
+
+  document.addEventListener("DOMContentLoaded", ()=>{
+    handle_displayClientHistory()
+  })
   
