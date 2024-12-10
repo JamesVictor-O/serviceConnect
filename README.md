@@ -95,9 +95,10 @@ The Local Service Provider Directory bridges the gap between customers seeking r
 ---
 
 ## 🌟 **Contributors**
-- [Your Name]
-- [Team Member 1]
-- [Team Member 2]
+- [James]
+- [Jethro]
+- [Paul]
+- [Zaka]
 
 We’re committed to creating a platform that transforms how local services are discovered and delivered. Your feedback and suggestions are welcome!
 
